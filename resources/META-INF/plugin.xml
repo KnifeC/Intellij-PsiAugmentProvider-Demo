@@ -1,0 +1,31 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>我的插件测试</name>
+  <version>1.0</version>
+  <vendor email="test@yourcompany.com" url="http://www.test.com">2323</vendor>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.java</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <lang.psiAugmentProvider  implementation="impl.PsiAugmentProviderImpl" />
+    <lang.structureViewExtension implementation="impl.StructureViewExtensionImpl"/>
+  </extensions>
+
+
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="addmethod" class="AddMethod" text="测试新增方法">
+      <add-to-group group-id="NewGroup" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
